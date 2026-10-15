@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+        content="Follow a baker's fall story and explore Halloween desserts, cozy baked goods, and no-bake treats.">
+
+  <title>Fall Recipe Studio | Home</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="home-page">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- Reduce motion checkbox -->
+  <input type="checkbox" id="reduce-motion" class="motion-checkbox">
+
+  <div class="site-wrapper">
+    <header class="site-header">
+      <label for="reduce-motion" class="motion-control">
+        Reduce motion
+      </label>
+
+      <nav aria-label="Main navigation">
+        <ul class="nav-links">
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="spooky_feast.html">Spooky Feast</a></li>
+          <li><a href="cozy_baked_goods.html">Cozy Baked Goods</a></li>
+          <li><a href="sweet_delights.html">Sweet Delights</a></li>
+          <li><a href="conclusion.html">Conclusion</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main-content" tabindex="-1">
+      <!-- Links to the categories below -->
+      <nav class="category-navigation"
+           aria-label="Jump to a recipe category">
+        <ul>
+          <li><a href="#spooky-category">Spooky Feast ↓</a></li>
+          <li><a href="#cozy-category">Cozy Baked Goods ↓</a></li>
+          <li><a href="#sweet-category">Sweet Delights ↓</a></li>
+        </ul>
+      </nav>
+
+      <section class="home-banner" aria-labelledby="website-title">
+        <div class="banner-content">
+          <p class="chapter-label">Chapter 1: The Bakery Opens</p>
+          <h1 id="website-title">Fall Recipe Studio</h1>
+
+          <div class="intro-box">
+            <h2>A Cozy Beginning</h2>
+
+            <p>
+              A baker is getting their bakery ready for fall.
+              Follow their story while exploring Halloween desserts,
+              cozy baked goods, and no-bake treats.
+              Choose a category below to begin.
+            </p>
+
+            <a href="spooky_feast.html" class="button">
+              Begin the next chapter
+            </a>
+          </div>
+        </div>
+
+        <!-- Squirrel decoration -->
+        <img src="images/squirrel.png"
+             alt=""
+             aria-hidden="true"
+             class="banner-squirrel">
+      </section>
+
+      <section class="recipe-categories"
+               aria-labelledby="categories-heading">
+        <h2 id="categories-heading">Explore the Recipe Categories</h2>
+
+        <p class="category-introduction">
+          Choose the type of treat you would like to make.
+          Each recipe page continues the baker’s story and includes
+          ingredients and preparation instructions.
+        </p>
+
+        <div class="category-grid">
+          <article id="spooky-category" class="category-card">
+            <h3>Spooky Feast</h3>
+
+            <p>
+              The baker begins by filling the shelves with
+              Halloween-themed desserts. Find spooky cookies
+              and festive treats for a Halloween celebration.
+            </p>
+
+            <a href="spooky_feast.html" class="button">
+              Explore Spooky Feast
+            </a>
+          </article>
+
+          <article id="cozy-category" class="category-card">
+            <h3>Cozy Baked Goods</h3>
+
+            <p>
+              Next, the baker warms up the oven. Explore
+              oven-baked favorites such as brownies, pies,
+              cookies, and cakes for a cozy fall day.
+            </p>
+
+            <a href="cozy_baked_goods.html" class="button">
+              Explore Cozy Baked Goods
+            </a>
+          </article>
+
+          <article id="sweet-category" class="category-card">
+            <h3>Sweet Delights</h3>
+
+            <p>
+              The baker adds the finishing touches with
+              treats that need no oven. Discover caramel
+              apple bark, puddings, and other no-bake delights.
+            </p>
+
+            <a href="sweet_delights.html" class="button">
+              Explore Sweet Delights
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <nav class="chapter-navigation" aria-label="Story progression">
+        <p>Current chapter: The Bakery Opens</p>
+
+        <a href="spooky_feast.html" class="button">
+          Next chapter: Spooky Feast →
+        </a>
+      </nav>
+    </main>
+
+    <footer class="site-footer">
+      <p>Created by Usra Robow and Alexa Veloz</p>
+      <a href="conclusion.html">Story conclusion and credits</a>
+    </footer>
+  </div>
+
+  <!-- Pumpkins at the bottom corners -->
+  <div class="pumpkin-corners" aria-hidden="true">
+    <div class="pumpkin-pair">
+      <div class="pumpkin-decoration pumpkin-large">
+        <img src="images/pumpkin2.png" alt="" class="pumpkin-image">
+      </div>
+
+      <div class="pumpkin-decoration pumpkin-small">
+        <img src="images/pumpkin2.png" alt="" class="pumpkin-image">
+      </div>
+    </div>
+
+    <div class="pumpkin-pair">
+      <div class="pumpkin-decoration pumpkin-small">
+        <img src="images/pumpkin2.png" alt="" class="pumpkin-image">
+      </div>
+
+      <div class="pumpkin-decoration pumpkin-large">
+        <img src="images/pumpkin2.png" alt="" class="pumpkin-image">
+      </div>
+    </div>
+  </div>
+</body>
+</html>
