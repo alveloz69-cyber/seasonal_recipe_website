@@ -649,3 +649,26 @@ details li {
     transform: none;
   }
 }
+/* Conclusion sources */
+#recipe-sources,
+#image-credits {
+  scroll-margin-top: 24px;
+}
+
+#recipe-sources .category-card {
+  min-width: 0;
+}
+
+#recipe-sources ul {
+  margin: 16px 0 0;
+  padding-left: 20px;
+}
+
+#recipe-sources li {
+  margin-bottom: 16px;
+  overflow-wrap: anywhere;
+}
+
+#recipe-sources li:last-child {
+  margin-bottom: 0;
+}
