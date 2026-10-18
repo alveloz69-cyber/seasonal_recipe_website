@@ -22,7 +22,9 @@ body {
   line-height: 1.6;
 }
 
-.home-page {
+.home-page,
+.cozy-page,
+.sweet-page {
   position: relative;
   isolation: isolate;
   min-height: 100vh;
@@ -30,7 +32,9 @@ body {
 }
 
 /* Leaf background */
-.home-page::before {
+.home-page::before,
+.cozy-page::before,
+.sweet-page::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -112,8 +116,11 @@ input:focus-visible,
 .intro-box,
 .recipe-categories,
 .category-card,
+.recipe-card,
 .chapter-navigation,
-.site-footer {
+.site-footer,
+.recipes-section,
+.about-section {
   border: 2px solid var(--border-color);
   border-radius: 10px;
   background: var(--card-background);
@@ -174,7 +181,7 @@ input:focus-visible,
   padding: 12px;
 }
 
-/* Homepage banner */
+/* Banners */
 .home-banner {
   position: relative;
   isolation: isolate;
@@ -210,7 +217,9 @@ h1 {
 }
 
 .intro-box h2,
-.recipe-categories > h2 {
+.recipe-categories > h2,
+.recipes-section h2,
+.about-section h2 {
   margin-top: 0;
 }
 
@@ -225,6 +234,73 @@ h1 {
   pointer-events: none;
 }
 
+/* Haunted House in the corner*/
+.banner-hauntedhouse {
+  position: absolute;
+  bottom: -5px;
+  left: 150;
+  z-index: 2;
+  width: 120px;
+  height: auto;
+  pointer-events: none;
+}
+
+/* Bat flying loop animation */
+
+.banner-bats {
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+  width: 140px;
+  height: auto;
+  pointer-events: none;
+  transform: scaleX(-1);
+  animation: bat-swoop-reverse 6s ease-in-out infinite;
+  z-index: 2;
+}
+
+@keyframes bat-swoop-reverse {
+  0% {
+    transform: translate(120px, 0) scale(0.8) scale(X-1) rotate(10deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  50% {
+    transform: translate(-150px, -25px) scale(1.1) scaleX(-1) rotate(-5deg);
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-450px, 0) scale(0.8) scaleX(-1) rotate(5deg);
+    opacity: 0;
+  }
+}
+
+/* Spiderwebs decoration in the top-right corner of the banner box */
+.banner-spiderwebs {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: auto;
+  pointer-events: none;
+  z-index: 2;
+}
+
+
+
+.banner-hauntedhouse2 {
+  position: absolute;
+  bottom: -5px;
+  left: 150;
+  z-index: 2;
+  width: 120px;
+  height: auto;
+  pointer-events: none;
+}
 /* Buttons */
 .button {
   display: inline-block;
@@ -242,13 +318,15 @@ h1 {
   background: var(--accent-hover);
 }
 
-/* Recipe categories */
-.recipe-categories {
+/* Recipe categories & recipes sections */
+.recipe-categories,
+.recipes-section {
   margin-top: 28px;
   padding: 28px;
 }
 
 .recipe-categories > h2,
+.recipes-section .section-heading,
 .category-introduction {
   text-align: center;
 }
@@ -265,7 +343,15 @@ h1 {
   margin-top: 28px;
 }
 
-.category-card {
+.recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 28px;
+}
+
+.category-card,
+.recipe-card {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -275,17 +361,97 @@ h1 {
 }
 
 .category-card:hover,
-.category-card:focus-within {
+.category-card:focus-within,
+.recipe-card:hover,
+.recipe-card:focus-within {
   transform: translateY(-6px);
   box-shadow: 0 10px 20px rgb(53 32 21 / 20%);
 }
 
-.category-card h3 {
-  margin: 0;
+.category-card h3,
+.recipe-card h3 {
+  margin: 0 0 8px 0;
 }
 
 .category-card .button {
   margin-top: auto;
+}
+
+/* Specific recipe card elements */
+.recipe-image {
+  display: block;
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  border: 2px solid var(--border-color);
+}
+
+.recipe-content {
+  width: 100%;
+}
+
+.recipe-tag {
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.recipe-time {
+  margin-top: 12px;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+details {
+  margin-top: 16px;
+  border-top: 1px solid var(--border-color);
+  padding-top: 12px;
+  width: 100%;
+}
+
+summary {
+  color: var(--accent);
+  cursor: pointer;
+  font-weight: bold;
+}
+
+summary:hover {
+  color: var(--accent-hover);
+}
+
+details h4{
+  margin: 12px 0 6px;
+}
+
+details ul,
+details ol {
+  padding-left: 20px;
+  color: var(--text-color);
+}
+
+details li {
+  margin-bottom: 4px;
+}
+
+/* About section styling */
+.about-section {
+  margin-top: 28px;
+  padding: 32px;
+  text-align: center;
+}
+
+.about-icon {
+  font-size: 2rem;
+}
+
+.about-section p {
+  max-width: 650px;
+  margin: 10px auto 0;
 }
 
 /* Chapter links and footer */
@@ -377,14 +543,17 @@ h1 {
     justify-content: center;
   }
 
-  .category-grid {
+  .category-grid,
+  .recipe-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 /* Phone screens */
 @media (max-width: 600px) {
-  .home-page {
+  .home-page,
+  .cozy-page,
+  .sweet-page {
     padding-top: 20px;
   }
 
@@ -392,7 +561,9 @@ h1 {
     width: 92%;
   }
 
-  .home-page::before {
+  .home-page::before,
+  .cozy-page::before,
+  .sweet-page::before {
     background-position: right -32px top -20px;
     background-size: auto 700px;
   }
@@ -418,16 +589,19 @@ h1 {
     width: 85px;
   }
 
-  .recipe-categories {
+  .recipe-categories,
+  .recipes-section {
     padding: 20px 16px;
   }
 
-  .category-grid {
+  .category-grid,
+  .recipe-grid {
     grid-template-columns: 1fr;
     gap: 18px;
   }
 
-  .category-card {
+  .category-card,
+  .recipe-card {
     padding: 20px;
   }
 
@@ -453,6 +627,7 @@ h1 {
 }
 
 #reduce-motion:checked ~ .site-wrapper .category-card,
+#reduce-motion:checked ~ .site-wrapper .recipe-card,
 #reduce-motion:checked ~ .pumpkin-corners .pumpkin-image {
   transform: none;
 }
@@ -468,6 +643,8 @@ h1 {
 
   .category-card:hover,
   .category-card:focus-within,
+  .recipe-card:hover,
+  .recipe-card:focus-within,
   .pumpkin-image:hover {
     transform: none;
   }
